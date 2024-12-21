@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta info for search engines -->
+    <meta name="description" content="Rack 'n' Beard presents a selection of professional pool timers and shot clocks to make your game more competitive!">
+    <meta name="keywords" content="Pool, 8-ball, time, timer, countdown, competition clock">
+    <!-- Link to the css stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Rack 'n' Beard - Shot clocks</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+</head>
+<body>
+
+    <header id="header">
+        <div id="brand">
+            Rack 'n' Beard
+        </div>
+        <div id="slogan">
+            Competitive pool shot timers
+        </div>
+    </header>
+
+    <main id="main">
+
+        <section id="welcome">
+            <br><br> <div id="spiel"><h1>Welcome to the Rack 'n' Beard timers</h1></div> <br>
+            <div id="info">This site is primarily for the setting up and use of a 'shot clock' or timer for the purpose of limiting the available time for planning and taking a turn in a game of 8-ball pool</div> <br>
+            <div id="contButton">
+                <button onclick="cont()" id="continue" title="Continue to timer selection">Continue</button>
+            </div>
+        </section>
+
+        <section id="home">
+            <br><br><br> 
+            <div id="disOpts"><h1>Select your length of shot clock</h1></div> <br><br>
+            <div id="timeContainer">
+                <button onclick="setTimer(14)" id="fifteen" title="15 second timer">15 <span>seconds</span></button>
+                <button onclick="setTimer(29)" id="thirty" title="30 second timer">30 <span>seconds</span></button>
+                <button onclick="setTimer(44)" id="fortyFive" title="45 second timer">45 <span>seconds</span></button>
+                <button onclick="setTimer(59)" id="sixty" title="60 second timer">60 <span>seconds</span></button>
+            </div>
+        </section>
+
+        <section id="clocks">
+            <div id="timer"><h1>--</h1></div>
+            <div id="timeOptions">
+                <button onclick="startPause()" id="startPause" title="Start or Pause timer">Start</button>
+                <button onclick="reset()" id="reset" title="Reset the timer">Reset</button>
+                <button onclick="addTime('yellow')" id="yellow" title="Add a 15 second extension">Yellow <br><span> Extension</span></button>
+                <button onclick="addTime('red')" id="red" title="Add a 15 second extension">Red <br><span> Extension</span></button>
+                <div id="ext">Extensions are fixed at 15 additional seconds</div><br>
+                <button onclick="resetFrame()" id="resetFrame" title="Reset the Frame">Reset Frame</button>
+            </div>
+        </section>
+
+        <audio src="assets/audio/beep.mp3" id="beep" preload="auto"></audio>
+        <audio src="assets/audio/xxx.mp3" id="xxx" preload="auto"></audio>
+
+    </main>
+
+    <br>
+    <br>
+    <br>
+
+    <footer>
+        <div id="footer">
+            <div id="mode">
+                <button id="modeBtn" title="Change the colour mode - b&w or colour">Colour mode</button>
+            </div>
+            <div id="logo">
+                <img src="assets/images/wo-glasses-bw.svg" alt="Rack 'n' Beard logo" id="logoImg" onclick="homepage()">
+            </div>
+            <div id="beg">
+                <button id="begBtn" onclick="beginning()" title="Go to timer selection">Timer options</button>
+            </div>
+            <br>
+        </div>
+        <div id="copyright">
+            &#169; Rack 'n'Beard - All materials are either the intellectual and real property of Rack 'n' Beard productions OR used with permission
+        </div>
+    </footer>
+
+    <!-- Javascript link -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
