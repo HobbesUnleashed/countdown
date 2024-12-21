@@ -25,6 +25,8 @@ body {
 }
 
 header {
+    display: flex;
+    flex-direction: column;
     min-height: 12vh;
     align-content: center;
     text-align: center;
@@ -105,7 +107,7 @@ footer {
     text-align: center;
 }
 
-#info, #spiel, #disOpts, #timer {
+#info, #spiel, #disOpts, #timer, #ext {
     width: fit-content;
     background-color: rgb(0, 0, 0, .6);
 }
@@ -128,6 +130,7 @@ button {
     padding: 10px;
     width: fit-content;
     font-size: 100%;
+    height: fit-content;
 }
 
 #contButton {
@@ -138,10 +141,10 @@ button {
 
 #fifteen, #thirty, #fortyFive, #sixty, #startPause, #reset, #yellow, #red {
     width: 35%;
-    min-height: 100px;
+    min-height: 80px;
     margin: 5%;
     flex-wrap: wrap;
-    font-size: 120%;
+    font-size: 100%;
 }
 
 #fifteen > span, #thirty > span, #fortyFive > span, #sixty > span, #yellow > span, #red > span{

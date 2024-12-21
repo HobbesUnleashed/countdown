@@ -39,6 +39,7 @@ function cont() {
 function setTimer(time) {
     options.style.display = "none";
     clock.style.display = "flex";
+    header.style.display = "none";
     timeLeft = time;
     initialsetTime = time;
     document.getElementById("timer").innerHTML = time;
@@ -173,6 +174,7 @@ function beginning() {
     clock.style.display = "none";
     welcome.style.display = "none";
     options.style.display = "flex";
+    header.style.display = "flex";
     resetFrame();
 }
 
@@ -181,5 +183,6 @@ function homepage() {
     clock.style.display = "none";
     welcome.style.display = "flex";
     options.style.display = "none";
+    header.style.display = "flex";
     resetFrame();
 }
