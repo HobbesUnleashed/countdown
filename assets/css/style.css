@@ -16,8 +16,8 @@ a {
 body {
     display: flex;
     flex-direction: column;
-    background-color: grey;
-    background: url(../images/background_mob-bw.webp) no-repeat center center/cover;
+    background: url(../images/background_lt-bw.webp) no-repeat center center/cover;
+    min-height: 100vh;
     max-height: 200vh;
     color: #fff;
     background-color: darkgrey;
@@ -39,33 +39,46 @@ header {
 #slogan {
     font-family: "Satisfy", cursive;
 }
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
 
 #welcome, #home, #clocks {
     width: 100%;
+    height:100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    font-size: 100%;
+    flex-grow: 1;
+    justify-content: center;
+    font-size: 120%;
     text-align: center;
-}
-
-#welcome {
-    margin: 10% auto auto;
+    margin: 5% auto auto;
     align-items: center;
 }
 
-#home, #clocks{
-    margin: auto;
-    align-items: center;
+#spiel, #disOpts {
+    flex: 0 0 15%;
 }
 
 #timer {
     font-size: 1500%;
 }
 
+#contButton, #timeContainer, #timeOptions {
+    flex: 1;
+}
+
 #timeContainer, #timeOptions {
     flex-direction: row;
     margin: auto;
+}
+
+footer {
+    margin-top: auto;
+    justify-content: center;
 }
 
 #footer {
@@ -75,11 +88,17 @@ header {
     text-align: center;
     align-items: center;
     margin: auto 5% auto;
+    justify-content: center;
 }
 
 #logo {
     width: 10%;
     margin: auto;
+}
+
+#logoImg {
+    max-height: 150px;
+    min-height: 80px;
 }
 
 #copyright {
@@ -153,10 +172,6 @@ button {
 
 /* Media query for larger than tablet */
 @media screen and (min-width: 768px) {
-
-    body {
-        background: url(../images/background_lt-bw.webp) no-repeat center center/cover;
-    }
     
     header {
         font-size: 300%;
@@ -165,13 +180,4 @@ button {
     #welcome, #home, #clocks {
         font-size: 150%;
     }
-
-}
-
-@media screen and (min-width: 901px) {
-
-    body {
-        background: url(../images/background_large-bw.webp) no-repeat center center/cover;
-    }
-
 }

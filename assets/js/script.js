@@ -10,8 +10,8 @@ const xsound = document.getElementById("xxx");
 // startPause button
 const startPauseBtn = document.getElementById("startPause");
 // Set constants for the elements to call regularly
-var red = document.getElementById("red");
-var yellow = document.getElementById("yellow");
+let red = document.getElementById("red");
+let yellow = document.getElementById("yellow");
 // Initialize the countdown time in seconds
 let timeLeft;
 let initialsetTime;
@@ -26,8 +26,8 @@ let redExtUsed = false;
 // Flag to check if dark mode already active
 let dark = false;
 // Counters to track if the extension buttons have been pressed
-var redcount = 0;
-var yellcount = 0;
+let redcount = 0;
+let yellcount = 0;
 
 // Function to hide the welcome section and show the options section
 function cont() {
@@ -41,7 +41,7 @@ function setTimer(time) {
     clock.style.display = "flex";
     timeLeft = time;
     initialsetTime = time;
-    document.getElementById("timer").innerHTML = time+1;
+    document.getElementById("timer").innerHTML = time;
 }
 
 // Function to start, pause or resume the countdown - based upon whichever option was chosen as a timer
@@ -62,7 +62,7 @@ function startPause() {
 
 // Function to update the timer
 function updateTimer() {
-    timer.innerHTML = timeLeft + 1;
+    timer.innerHTML = timeLeft;
     timeLeft--;
 
     // If time is less than or equal to 5 on screen - change text to red
@@ -84,14 +84,14 @@ function addTime(buttonPressed) {
     if(buttonPressed == "red") {
         redcount++;
         timeLeft += 16;
-        timer.innerHTML = timeLeft;
+        timer.innerHTML = timeLeft-1;
         timer.style.color = "white";
         redExtUsed =true;
         red.style.visibility = "hidden";
     } else {
         yellcount++;
         timeLeft += 16;
-        timer.innerHTML = timeLeft;
+        timer.innerHTML = timeLeft-1;
         timer.style.color = "white";
         yellowExtUsed = true;
         yellow.style.visibility = "hidden";
@@ -125,7 +125,7 @@ function reset() {
     clearInterval(countdown);
     isRunning = false;
     timeLeft = initialsetTime;
-    timer.innerHTML = initialsetTime+1;
+    timer.innerHTML = initialsetTime;
     startPauseBtn.innerHTML = "Start";
     timer.style.color = "white";
     showDisabled();
@@ -149,8 +149,7 @@ document.getElementById("modeBtn").addEventListener("click", function() {
     if (!dark) {
         // Set the attributes to be changed to variables
         document.getElementById('logoImg').src="assets/images/wo-glasses.svg";
-       // document.getElementById('sponsorImg').src="assets/images/cousins-logo.webp";
-        document.body.style.backgroundImage = "url(assets/images/background_mob.webp";
+        document.body.style.backgroundImage = "url(assets/images/background_lt.webp";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundSize = "cover";
@@ -159,8 +158,7 @@ document.getElementById("modeBtn").addEventListener("click", function() {
         this.innerHTML = `Dark mode`;
     } else {
         document.getElementById('logoImg').src="assets/images/wo-glasses-bw.svg";
-       // document.getElementById('sponsorImg').src="assets/images/cousins-logo-bw.webp";
-        document.body.style.backgroundImage = "url(assets/images/background_mob-bw.webp";
+        document.body.style.backgroundImage = "url(assets/images/background_lt-bw.webp";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundSize = "cover";
